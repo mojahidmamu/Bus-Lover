@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 mt-10">
+        <h1 class="text-2xl font-bold text-center mb-4">Financial Dashboard</h1>
+
+        <!-- Total Balance -->
+        <div class="flex justify-between items-center bg-blue-500 text-white p-4 rounded-lg">
+            <p class="text-lg">Total Balance:</p>
+            <p id="total-balance" class="text-xl font-bold">৳ 0</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid grid-cols-2 gap-4 mt-6">
+            <button onclick="showPage('add-money')" class="bg-green-500 text-white p-3 rounded-lg">Add Money</button>
+            <button onclick="showPage('cash-out')" class="bg-red-500 text-white p-3 rounded-lg">Cash Out</button>
+            <button onclick="showPage('transfer')" class="bg-yellow-500 text-white p-3 rounded-lg">Transfer</button>
+            <button onclick="showPage('transaction-history')" class="bg-gray-500 text-white p-3 rounded-lg">History</button>
+        </div>
+
+        <!-- Pages -->
+        <div id="add-money" class="hidden mt-6">
+            <h2 class="text-xl font-semibold">Add Money</h2>
+            <input type="number" id="add-amount" class="w-full p-2 border rounded mt-2" placeholder="Enter Amount">
+            <button onclick="addMoney()" class="w-full bg-blue-600 text-white p-2 mt-2 rounded">Confirm</button>
+        </div>
+
+        <div id="cash-out" class="hidden mt-6">
+            <h2 class="text-xl font-semibold">Cash Out</h2>
+            <input type="number" id="cash-out-amount" class="w-full p-2 border rounded mt-2" placeholder="Enter Amount">
+            <button onclick="cashOut()" class="w-full bg-red-600 text-white p-2 mt-2 rounded">Confirm</button>
+        </div>
+
+        <div id="transfer" class="hidden mt-6">
+            <h2 class="text-xl font-semibold">Transfer Money</h2>
+            <input type="text" id="transfer-account" class="w-full p-2 border rounded mt-2" placeholder="Enter Account Number (11 digits)">
+            <input type="number" id="transfer-amount" class="w-full p-2 border rounded mt-2" placeholder="Enter Amount">
+            <button onclick="transferMoney()" class="w-full bg-yellow-600 text-white p-2 mt-2 rounded">Confirm</button>
+        </div>
+
+        <div id="transaction-history" class="hidden mt-6">
+            <h2 class="text-xl font-semibold">Transaction History</h2>
+            <ul id="history-list" class="mt-2 space-y-2 text-gray-700"></ul>
+        </div>
+    </div>
+
+  <script src="Nagad.js"></script>
+</body>
+</html>
